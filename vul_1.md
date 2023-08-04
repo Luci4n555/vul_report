@@ -1,19 +1,19 @@
 
-#ECShop_v4.1.16 Arbitrary File Deletion Vulnerability
+# ECShop_v4.1.16 Arbitrary File Deletion Vulnerability
 
-#####1. Affected version
+## 1. Affected version
 
 ```
  ECShop <= 4.1.16
 ```
 
-#####2. Firmware download address
+## 2. Firmware download address
 
 [https://www.ecshop.com/download](https://www.ecshop.com/download)
 
 or the source directory and readme directory of this repository are ECShop_ Source code for v4.1.16
 
-#####3. Vulnerability details
+## 3. Vulnerability details
 
  Starting from line 266 of the file  source  on "\source\ecshop\admin\database.php".
 
@@ -72,7 +72,7 @@ if ($_REQUEST['act'] == 'remove') {
 
 We can find that for the file parameter passed in by POST, the $s_file variable is not filtered, and any file can be deleted by using directory splicing.
 
-#####4. Vulnerability verification
+## 4. Vulnerability verification
 
 First, in the \source\ecshop directory, create a file named 123.php to verify the vulnerability.
 
