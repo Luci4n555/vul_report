@@ -1,0 +1,70 @@
+{if $full_page}
+<!-- $Id: users_list.htm 17053 2010-03-15 06:50:26Z sxc_shop $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+<script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  function get_mobile(data) {
+    if ($('#mobile' + data).html().indexOf('*') != -1) {
+      $('#mobile' + data).html($('#mobile' + data).attr('data-name'))
+    } else {
+      $('#mobile' + data).html($('#mobile' + data).attr('data-car'))
+    }
+  }
+</script>
+
+<!-- start users list -->
+<div class="list-div" id="listDiv">
+{/if}
+<!--用户列表部分-->
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th>{$lang.record_id}</th>
+    <th>{$lang.sms_phone}</th>
+    <th>{$lang.sms_very_code}</th>
+    <th>{$lang.sms_send_time}</th>
+
+  <tr>
+  {foreach from=$data item=item}
+  <tr>
+    <td class="first-cell">{$item.sms_id}</td>
+    <td><span id="mobile{$item.sms_id}" data-name={$item.mobile} data-car={$item.x_mobile}
+              onclick="get_mobile({$item.sms_id})">{$item.x_mobile}</span></td>
+    <td>{$item.vcode}</td>
+    <td>{$item.add_time}</td>
+  </tr>
+  {foreachelse}
+  <tr><td class="no-records" colspan="1">{$lang.no_records}</td></tr>
+  {/foreach}
+  <tr>
+
+      <td align="right" nowrap="true" colspan="8">
+      {include file="page.htm"}
+      </td>
+  </tr>
+</table>
+
+{if $full_page}
+</div>
+<!-- end users list -->
+<script type="text/javascript" language="JavaScript">
+<!--
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+
+{literal}
+
+
+/**
+ * 搜索用户
+ */
+
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
+{/if}

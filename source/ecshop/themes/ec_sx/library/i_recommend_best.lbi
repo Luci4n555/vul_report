@@ -1,0 +1,51 @@
+<!-- 当前页面可以修改首页“精品推荐”区域的文字内容 -->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $best_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<div class="fresh_unique_bg  tabs tabs_1">
+  <div class="fresh_mod_head web_body">
+    <div class="fresh_mod_head_title">特<i>/</i>色<i>/</i>购</div>
+    <p class="fresh_mod_head_subtitle">FEATURED FRESH</p>
+  </div>
+    <div class="fresh_unique_bgl"></div>
+  <div class="fresh_unique_bgr"></div>
+  <div id="show_best_area" class="web_body">
+
+    <div class="fresh_top100_head_inner clearfix"> <span class="fresh_top100_head_title">优选生鲜</span> <span class="fresh_top100_head_subtitle">精挑细选100分健康美味</span> </div>
+    <!-- {/if} -->
+    <div class="pd">
+      <!--{foreach from=$best_goods item=goods name=best_goods}-->
+      <!-- {if $smarty.foreach.best_goods.iteration<5} -->
+      <div class="prcitem"  >
+        <div class="prcitem_border">
+          <div class="p"><a href="{$goods.url}" class="pic"><img src="{$goods.thumb}"  alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+          <div class="i">
+            <div class="goods_item_name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html} </a> </div>
+            <!-- {if $goods.brief} -->
+            <div class="goods_item_desc">{$goods.brief|truncate:35:"..."}</div>
+            <!--{/if}-->
+            <div class="goods_item_priceg">
+              <!-- {if $goods.promote_price neq ""} -->
+              <em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              <em>{$goods.shop_price}</em>
+              <!--{/if}-->
+              <span>
+               <!-- {if $goods.weight} -->   {$goods.weight}  
+                   <!-- {else}--><del>{$goods.market_price}</del>
+               <!--{/if}--></span></div>
+          </div>
+        </div>
+      </div>
+      <!-- {/if} -->
+      <!--{/foreach}-->
+      <div class="clear0"></div>
+      <a class="fresh_unique_btn"  href="search.php?intro=best"  target="_blank" clstag="channel|keycount|3742|top100More4_1">{$lang.more_goods}<i>&gt;</i></a> </div>
+    <!-- {if $cat_rec_sign neq 1} -->
+    <div class="clear0"></div>
+  </div>
+</div>
+<!-- {/if} -->
+<!-- {/if} -->

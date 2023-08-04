@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+{insert name='ads' id=223 num=5}
+<script>
+$(function (){
+			
+			$(".Tr_cs0").textSlider({
+            speeds: 5000,
+            lines: 1,
+            offset: 9000,
+            direc: 4,
+            qnum: 1
+        });
+
+  $(".sort_good_from").textSlider({
+            speeds: 5000,
+            lines: 5,
+            offset: 500000,
+            direc: 1,
+            qnum: 5
+        });
+})
+ </script>

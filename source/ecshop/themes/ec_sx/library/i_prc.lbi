@@ -1,0 +1,135 @@
+   <!-- i_prc.lbi-   此页面修改早市、午市、晚市抢鲜内容-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language='javascript' src='{$template_dir}/js/fd30_time.js' type='text/javascript' charset='utf-8'></script>
+ 
+<div class="tab fresh_seckill_tab tabs tabs_0">
+  <div class="tab_head">
+    <div class="tab_head_item active">
+      <div class="tab_head_item_1" >
+      
+        <div class="fresh_mod_iconfont icon icon-fresh_seckill_morning"></div>
+        <div class="name">早市抢鲜</div>
+        <div class="tip">6:00 - 10:00</div>
+      </div>
+    </div>
+    <div class="tab_head_item">
+      <div class="tab_head_item_2">
+        <div class="fresh_mod_iconfont icon icon-fresh_seckill_afternoon"></div>
+        <div class="name">午市抢鲜</div>
+        <div class="tip">10:00 开始</div>
+      </div>
+    </div>
+    <div class="tab_head_item">
+      <div class="tab_head_item_3">
+        <div class="fresh_mod_iconfont icon icon-fresh_seckill_night_icon"></div>
+        <div class="name">晚市抢鲜</div>
+        <div class="tip">18:00 开始</div>
+      </div>
+    </div>
+    <div class="fresh_seckill_time ing"><div class="fresh_seckill_time_tip">{$lang.sx_end_time}</div>
+    <div class="fd30_time" dayh="3" endtime="" ></div></div>
+    
+  </div>
+  <div class="sort_goods_arr" >
+    <!-- {foreach from=$sort_goods_arr1 item=sort key=sort_name name=goods_arr} -->
+    <div class="Tr_cs sort_name_f sort_good_from"      <!-- {if $smarty.foreach.goods_arr.iteration>1} -->
+    style="display:none"
+    <!--{/if}-->
+    >
+    <div class="up_down">
+      <div class="pp"><a class="up" href="javascript:;"></a><a class="down" href="javascript:;"></a></div>
+    </div>
+    <div class="sort_goods cxjad_m">
+      <div class="cxjinfo">
+        <!-- {foreach from=$sort item=goods name=goodsname} -->
+        <div class="cxjitem sort_good_item"  >
+          <div class="sort_good_item_p">
+            <div class="prices">
+              <!-- {if $goods.is_promote} -->
+              <em>{$goods.promote_price}</em>
+              <!-- {else}-->
+              <em>{$goods.shop_price} </em>
+              <!--{/if}-->
+              <del>{$goods.market_price}</del> </div>
+            <div class="p"><a href="{$goods.url}" class="pic"> <img class="goodsimg" width="220" height="220" src="{$goods.goods_thumb}"   ></a></div>
+    
+              <div class="name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}">{$goods.goods_name|escape:html}
+                <!-- {if $goods.brief} -->
+                <span>{$goods.brief}</span>
+                <!--{/if}-->
+                </a></div>
+                
+                <div class="goods_item_progress"><p class="goods_item_progress_text">好评率98%</p><div class="goods_item_progress_line"><i style="width: 98%"></i></div></div>
+                <a  href="{$goods.url}" class="goods_item_btn">{$lang.group_buy_buy}</a>
+     
+          </div>
+        </div>
+        <!--{/foreach}-->
+      </div>
+    </div>
+    
+   <div class="TABLE_S">
+    <table border="0">
+      <tbody><tr>
+        <td>        <b class="cxjli visited"></b>        <b class="cxjli"></b>  </td>
+      </tr>
+    </tbody></table>
+  </div>
+  </div>
+  <!--{/foreach}-->
+  <div class="clear0"></div>
+</div>
+</div>
+
+
+<script> 
+$(function (){
+	var now = new Date();
+ var h=now.getHours();
+  var m=now.getMinutes();
+ 
+if(h>5&h<10)   <!-- 假设第一段时间为5-8，这里填写   if(h>4&h<8)     -->
+{
+	$(".tab .fd30_time").attr("endtime","2218/7/16,10:00"); <!-- 把"2218/7/16,10:00"后面的10:00修改为8:00，即结束时间 -->
+	$(".tab_head_item_1 .tip").html("6:00 - 10:00");<!-- 把("6:00 - 10:00")修改为正确的第一段时间 -->
+	 $(".tab_head_item").removeClass("active");
+     $(".tab_head_item").eq(0).addClass("active");
+	 $(".sort_name_f").hide();
+	 $(".sort_name_f").eq(0).show();
+	}
+	
+else if(h>9&h<18)<!-- 假设第二段时间为11-13，这里填写   if(h>10&h<13)     -->
+{
+	$(".tab .fd30_time").attr("endtime","2218/7/16,18:00");<!-- 把"2218/7/16,18:00"后面的18:00修改为13:00，即结束时间     -->
+	$(".tab_head_item_1 .tip").html("10:00 结束");<!-- 把("10:00 结束")修改为正确的第一段结束时间 -->
+	$(".tab_head_item_2 .tip").html("10:00 - 18:00");<!-- 把("10:00 - 18:00")修改为正确的第二段时间 -->
+     $(".tab_head_item").removeClass("active");
+     $(".tab_head_item").eq(1).addClass("active");
+	 $(".sort_name_f").hide();
+	 $(".sort_name_f").eq(1).show();
+	
+	}
+
+else
+{
+	$(".tab .fd30_time").attr("endtime","2218/7/16,23:00");<!-- 把"2218/7/16,23:00"后面的23:00修改为第三段的结束时间     -->
+	$(".tab_head_item_2 .tip").html("18:00结束");<!-- 把("18:00结束")修改为第二段的结束时间     -->
+	$(".tab_head_item_3 .tip").html("18:00 - 23:00");<!-- 修改为第三段的时间区间     -->
+	 $(".tab_head_item").removeClass("active");
+     $(".tab_head_item").eq(2).addClass("active");
+	 $(".sort_name_f").hide();
+	 $(".sort_name_f").eq(2).show();
+	};		
+			
+ $(".tab_head_item").click(function(){
+  $(".tab_head_item").removeClass("active");
+  $(this).addClass("active");
+  
+  $(".sort_name_f").hide();
+  $(".sort_name_f").eq($(this).index()).show();
+ })
+  
+
+})
+</script>

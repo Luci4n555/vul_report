@@ -1,0 +1,29 @@
+{include file="pageheader.htm"}
+
+<div style="width:100%;border:solid 1px #dddddd;padding: 25px;">
+    <div style="margin: 0 auto;width: 635px;">
+        <form action="mobile_setting.php" method="post" enctype="multipart/form-data">
+
+            <p><span>{$lang.privacy_rights}：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <textarea name="privacy_rights" rows="6" cols="32" id="privacy_rights" value="{$privacy_rights}" style="width:600px;height:200px">{$privacy_rights}</textarea>
+                <!--                <input type="text" name="privacy_rights" value="{$privacy_rights}">-->
+            </p>
+            <input type="hidden" name="act" value="up_privacy_rights">
+
+            <p><span>{$lang.wechat_app_pol}：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!--                <input type="text" name="user_policy" value="{$user_policy}">-->
+                <textarea name="user_policy" rows="6" cols="32" id="user_policy" value="{$user_policy}" style="width:600px;height:200px">{$user_policy}</textarea>
+            </p>
+            <input type="hidden" name="act" value="up_privacy_rights">
+
+            </br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" style="margin-right: 20px"> {$lang.submit}</button>
+        </form>
+    </div>
+</div>
+
+{include file="pagefooter.htm"}

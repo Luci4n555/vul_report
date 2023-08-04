@@ -1,0 +1,42 @@
+ <!-- 当前页面可以修改团购试吃、新品初见区域的说明文字 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="group_buy_box">
+  <div class="fresh_trial_head">
+    <h4 class="fresh_mod_iconfont fresh_trial_head_title icon-fresh_unique_trial_icon">{$lang.group_buy}</h4>
+    <a class="fresh_unique_btn" href="group_buy.php" target="_blank" clstag="channel|keycount|3742|trialMore4_1">{$lang.more_goods}<i>&gt;</i></a></div>
+  <!--{foreach from=$group_buy_goods item=goods name=group_buy_goods}-->
+  <!-- {if $smarty.foreach.group_buy_goods.iteration<2} -->
+  <div class="group_goods">
+    <div class="g_l">
+      <div class="name">{$goods.short_name|escape:html}</div>
+      <div class="info">{$lang.sx_group_still}<b>{$goods.sy_num}</b>{$lang.sx_group_mun}<br>
+        {$lang.group_buy_alr} <b>  
+        <!-- {if $goods.buy_num } -->
+        {$goods.buy_num}
+        <!-- {else} -->
+        0
+        <!-- {/if} -->
+        </b>{$lang.group_buy_number}</div>
+      {$lang.sx_group_still} <span class="fd30_time" dayh="1" endtime="{$goods.end_time}"></span> <a  class="qgbtn" href="{$goods.url}"  >{$lang.group_buy_join}</a> </div>
+    <div class="g_r"> <a href="{$goods.url}" class="pic"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg"  /></a></div>
+    <div class="clear0"></div>
+  </div>
+  <!-- {/if} -->
+  <!--{/foreach}-->
+</div>
+<div class="new_goods">
+  <div class="fresh_new_head">
+    <h4 class="fresh_mod_iconfont fresh_new_head_title icon-fresh_unique_new_icon">{$lang.new_goods}</h4>
+    <a class="fresh_unique_btn" href="search.php?intro=new" target="_blank" >{$lang.more_goods}<i>&gt;</i></a></div>
+  <div class="fresh_new_body"> <a class="fresh_new_text" href="search.php?intro=new" target="_blank" >
+    <p class="fresh_new_text_name">初见倾心 一口爱上 </p>
+    <p class="fresh_new_text_desc">每口都如初见 搜罗全球新鲜美味 </p>
+    <p class="fresh_new_text_btn">{$lang.more_goods} &gt;</p>
+    </a>
+    <!--{foreach from=$new_goods item=goods name=new_goods}-->
+    <!-- {if $smarty.foreach.new_goods.iteration<3} -->
+    <a href="{$goods.url}" class="pic <!-- {if $smarty.foreach.new_goods.first} -->a_f<!-- {/if} -->" > <span class="goods_item_tag">新鲜上市</span> <img src="{$goods.thumb}"  alt="{$goods.name|escape:html}" class="goodsimg" /></a>
+    <!-- {/if} -->
+    <!--{/foreach}-->
+  </div>
+</div>

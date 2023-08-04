@@ -1,0 +1,67 @@
+<!-- index_comments.lbi-   最下方评论的大标题 -->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $my_comments} -->
+<div class="my_comments_bg  tabs tabs_4">
+  <div class="my_comments web_body">
+    <div class="fresh_mod_head">
+      <div class="fresh_mod_head_title">&nbsp;食／鲜／者／说</div>
+      <p class="fresh_mod_head_subtitle">CUSTOMER SAYS</p>
+    </div>
+    <div class="Tr_cs">
+      <div class="up_down">
+        <div class="pp"><a class="up" href="javascript:;"></a><a class="down" href="javascript:;"></a></div>
+      </div>
+      <div class="cxjad_m">
+        <div class="cxjinfo">
+          <!--{foreach from=$my_comments item=comments name=my_comments}-->
+          <div class="comments_item cxjitem  divs_{$smarty.foreach.my_comments.index}">
+            <div class="goods_item_person"><img  width="50" height="50"  src="{$comments.fase_content}" 
+          
+           onerror="javascript:this.src='{$template_dir}/images/peisong.jpg'"
+          
+          
+          alt="{$comments.user_name}">
+              <p>
+                <!-- {if $comments.user_name} -->
+                {$comments.user_name}
+                <!-- {else}-->
+                匿名
+                <!--{/if}-->
+              </p>
+            </div>
+            <div class="comments_info"> <a href="goods.php?id={$comments.id_value}"  class="pic"><img src="{$comments.goods_thumb}" alt="{$comments.goods_name}" /></a>
+              <div class="info"> <span class="rank_point"><em style="width:{$comments.goods_crank}px;"></em></span>
+                <div class="p1"><a target="_blank" href="goods.php?id={$comments.id_value}">{$comments.content|truncate:60:"9"}</a></div>
+                <div class="p2">{$comments.add_time}</div>
+              </div>
+            </div>
+          </div>
+          <!--{/foreach}-->
+        </div>
+      </div>
+      <div class="clear10"></div>
+      <div class="TABLE_S">
+        <table border="0">
+          <tbody>
+            <tr>
+              <td><b class="cxjli visited"></b> <b class="cxjli"></b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="clear0"></div>
+  </div>
+</div>
+<script>  $(function (){
+$(".my_comments").textSlider({
+            speeds: 5000,
+            lines: 3,
+            offset: 5000000,
+            direc: 1,
+            qnum: 3
+        }); })
+</script>
+<!-- {/if} -->

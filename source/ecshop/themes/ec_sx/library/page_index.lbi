@@ -1,0 +1,148 @@
+<div class="fd_top1">
+  <div class="fd_top">
+    <div class="navs_l hover">
+      <div class="logo1"><a href="../index.php" name="top"><img src="{$template_dir}/images/logo.png" class="logo" /></a></div>
+      <div class="fd30_cat">
+        <div class="t"></div>
+        <div class="classmenu">
+          <ul>
+            <!--{foreach from=$categories item=cat name=catename }-->
+            <!--{if $smarty.foreach.catename.iteration<=6}-->
+            <li class="cat_lv1 hover  post_cat{$cat.id} li{$smarty.foreach.catename.iteration}">
+              <div class="ct"><i> </i> <a class="ao" href="
+              <!--{if $cat.style}-->
+              categorys.php?id={$cat.id}<!-- {else} --> category.php?id={$cat.id}<!-- {/if} -->             
+              ">{$cat.name|escape:html}</a>
+                <div class="next">
+                  <!--{foreach from=$cat.cat_id item=child name=childname}-->
+                  <!--{if $smarty.foreach.childname.iteration<=3}-->
+                  <a  href="{$child.url}"> {$child.name|escape:html}</a>
+                  <!--{/if}-->
+                  <!--{/foreach}-->
+                </div>
+              </div>
+              <!--{if $cat.cat_id}-->
+              <div class="cat_p">
+                <div class="ts"> <a class="ao word_c" href="
+              <!--{if $cat.style}-->
+              categorys.php?id={$cat.id}<!-- {else} --> category.php?id={$cat.id}<!-- {/if} -->             
+              ">浏览{$cat.name|escape:html}频道<i>></i></a> </div>
+                <div class="cat_cat">
+                  <!--{foreach from=$cat.cat_id item=child name=childname}-->
+                  <a class="at <!--{if $child.fdcolor}-->{$child.fdcolor}<!--{/if}-->" href="{$child.url}"> {$child.name|escape:html}</a>
+                  <!--{/foreach}-->
+                  <div class="clear0"></div>
+                </div>
+                
+                              <!--    sp-->
+                <!-- {foreach from=$sort_goods_arr1 item=sort key=sort_name name=goods_arr} -->
+                   <!-- {if $sort_name==$cat.name}-->
+                   
+       
+                <div class="top_sort_f">
+                  <!-- {foreach from=$sort item=goods name=goodsname} -->
+                  <!-- {if $smarty.foreach.goodsname.index < 4}-->
+                  <div class="prcitem prcitem{$smarty.foreach.goodsname.iteration}" >
+                    <div class="prcitem_border">
+                      <div class="p"><a href="{$goods.url}"> <img class="goodsimg" width="220" height="220" src="{$goods.goods_thumb}"></a></div>
+                      <div class="i">
+                        <div class="name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}">{$goods.goods_name|escape:html}
+                          <!-- {if $goods.brief} -->
+                          <span>{$goods.brief}</span>
+                          <!--{/if}-->
+                          </a></div>
+                        <div class="prices">
+                          <!-- {if $goods.is_promote} -->
+                          <em class="word_c">{$goods.promote_price}</em>
+                          <!-- {else}-->
+                          <em class="word_c">{$goods.shop_price} </em>
+                          <!--{/if}-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--{/if}-->
+                  <!--{/foreach}-->
+                  <div class="clear0"></div>
+                </div>
+                <!--{/if}-->
+
+     
+                <!--{/foreach}-->
+                <!-- end sp-->
+    
+  
+              </div>
+              <!--{/if}-->
+            </li>
+            <!--{/if}-->
+            <!--{/foreach}-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="navs_m">
+      <ul class="Menulist fl">
+        <li class="li1"><a href="../index.php" class="top_sort ">{$lang.home}</a></li>
+        <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+        <!-- {if $smarty.foreach.nav_middle_list.index < 5}-->
+        <li><a class="top_sort " href="{$nav.url}" 
+          
+          
+          
+          
+          
+          
+          
+          
+          <!-- {if $nav.opennew eq 1} -->
+          target="_blank"
+          <!-- {/if} -->
+          >{$nav.name}</a></li>
+        <!-- {/if} -->
+        <!-- {/foreach} -->
+      </ul>
+    </div>
+    <div class="logo_r">
+      <div class="logo2 search">
+        <div class="search_label ">
+          <form id="searchForm" name="searchForm" method="get" action="search.php"  class="SearchBar" onSubmit="return checkSearchForm()">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><select name="category" id="category" class="B_input" style="display:none">
+                    <option value="0">{$lang.all_category}</option>
+                    
+                    
+                    
+                    
+                    
+                    {$category_list}
+                  
+                  
+                  
+                  
+                  
+                  </select>
+                  <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" class="inputstyle keywords" placeholder="nova 3i|荣耀 Note10" autocomplete="off" /></td>
+                <td><input name="imageField" type="submit" value="搜索" title="搜索" class="btn_search" style="cursor:pointer;" /></td>
+                <td style="display:none"><a href="search.php?act=advanced_search">{$lang.advanced_search}</a></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="clear0"></div>
+  </div>
+</div>
+<!--[if !IE]><!-->
+<script src="{$template_dir}/js/scrollReveal.min.js"></script>
+<script>$(function (){
+window.sr = new scrollReveal({
+	// reset: true,
+	move: '100px',
+	mobile: true
+});})
+</script>

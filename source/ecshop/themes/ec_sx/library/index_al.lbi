@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="index_al">
+  <div class="t"><span>经典案例展示</span><a  href="case.php?id=18" target="_blank">查看更多案例></a></div>
+  <div class="fl Tr_cs Tr_csal">
+    <div class="up_down">
+      <div class="pp"><a class="up" href="javascript:;"></a><a class="down" href="javascript:;"></a></div>
+    </div>
+    <div class="cxjad_m">
+      <div class="cxjinfo">
+        <div class="cxjitem"><a href="case_g.php?id=91" target="_blank"><img width="468" height="285" src="images/al/lovehakids_m.jpg" border="0"> <span> HAKIDS是线上童装精品店</span></a> </div>
+       
+      </div>
+    </div>
+    <div class="TABLE_S">
+      <table border="0">
+        <tbody>
+          <tr>
+            <td><b class="cxjli"> </b><b class="cxjli"></b><b class="cxjli"></b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+  $(".Tr_csal").textSlider({
+            speeds: 5000,
+            lines: 1,
+            offset: 9000,
+            direc: 1,
+            qnum: 1
+        });</script>
+  <div class="fr">
+    <ul>
+      <!--{foreach from=$class_articles_18 item=article}-->
+      <li><a href="case_g.php?id={$article.id}" title="{$article.title|escape:html}"><span class="img"><img src="
+          
+               <!-- {if $article.file_url } -->{$article.file_url}<!-- {else} -->http://ecshop.test2.shopex123.com/themes/images/logo.jpg<!-- {/if} -->" /></span><span class="word">{$article.title|escape:html}</span> </a></li>
+      <!--{/foreach}-->
+    </ul>
+  </div>
+  <div class="clear0"></div>
+</div>

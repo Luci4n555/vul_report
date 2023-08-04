@@ -1,0 +1,66 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div  id="ECS_CARTINFO" class="fd30_slideTog ShopCartWrap">
+  <!-- {if $goods} -->
+  <div class="cart_t"><i class="bases"></i><a href="flow.php?step=checkout">{$lang.top_cart_info} <b id="goodsCount"  class="bg_c goods_number">{$goods_number}</b></a></div>
+  <div class="ii slideTog_info">
+    <div id="cart_list">
+      <div id="goodsList"> {foreach from=$goods item=goods name=goods}
+        <ul>
+          <li class="cart_img pic"><a href="{$goods.url}"><img src="{$goods.goods_thumb}" /></a></li>
+          <li class="cart_name"><a  href="{$goods.url}">{$goods.short_name}</a>
+            <p><em>{$goods.goods_price}</em><a class="del" href="javascript:" onClick="deleteCartGoods({$goods.rec_id})">{$lang.drop}</a></p>
+          </li>
+          <div class="clear0"></div>
+        </ul>
+        {/foreach} </div>
+      <div class="total"><span>{$lang.total}<b id="goodsCount2" class="word_c">{$goods_number}</b>{$lang.cart_goods_amount}￥<b id="goodsAmount" class="word_c">{$order_amount}</b></span><a class="btn bg_c" href="flow.php?step=checkout">{$lang.cart_goods_conti}</a></div>
+    </div>
+  </div>
+  <!-- {else} -->
+  <div class="cart_t"><i class="bases"></i><a href="flow.php?step=checkout">{$lang.top_cart_info} <b id="goodsCount"  class="bg_c goods_number">{$goods_number}</b></a></div>
+  <div class="ii slideTog_info">
+    <div id="cart_list">
+      <div class="noprc">{$lang.cart_no_goods}</div>
+    </div>
+  </div>
+  <!-- {/if} -->
+</div>
+<script type="text/javascript">
+
+function deleteCartGoods(rec_id)
+
+{
+
+Ajax.call('delete_cart_goods.php', 'id='+rec_id, deleteCartGoodsResponse, 'POST', 'JSON');
+
+}
+
+/**
+
+* 接收删除后返回的信息
+
+*/
+
+function deleteCartGoodsResponse(res)
+
+{
+
+  if (res.error)
+
+  {
+
+    alert(res.err_msg);
+
+  }
+
+  else
+
+  {
+
+      document.getElementById('ECS_CARTINFO').innerHTML = res.content;
+
+  }
+
+}
+
+</script>

@@ -1,0 +1,11 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="fresh_fs_toutiao">
+  <div class="fresh_fs_toutiao_title"><i class="fresh_fs_toutiao_title_l"></i><span class="fresh_fs_toutiao_title_text"><em>生鲜</em>头条</span><i class="fresh_fs_toutiao_title_r"></i></div>
+  <div class="fresh_fs_toutiao_list">
+    <!--{foreach from=$class_articles_4 item=article_item name=article_item}-->
+    <!-- {if $smarty.foreach.article_item.iteration<4} -->
+    <a href="article.php?id={$article_item.id}" title="{$article_item.title|escape:html}" class="fresh_fs_toutiao_item" clstag="channel|keycount|3742|toutiaItem1_1"> <span>{$article_item.title}</span></a>
+    <!-- {/if} -->
+    <!--{/foreach}-->
+  </div>
+</div>

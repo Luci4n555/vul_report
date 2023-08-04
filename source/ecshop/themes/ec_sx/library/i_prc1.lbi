@@ -1,0 +1,93 @@
+ <!--当前页面可以修改首页四个分区的大标题，现在叫“身<i>/</i>临<i>/</i>食<i>/</i>感” ；还可以修改该区域商品图片右下角显示的文字-->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="sort_goods_arr2_bg   tabs tabs_2">
+  <div class="sort_goods_arr2_box web_body">
+    <div class="fresh_slim_body_bg"></div>
+    <div class="fresh_mod_head">
+      <div class="fresh_mod_head_inner">
+        <div class="fresh_mod_head_title">身<i>/</i>临<i>/</i>食<i>/</i>感</div>
+ <!--   上一行可以修改首页四个分区的大标题，现在代码是<div class="fresh_mod_head_title">身<i>/</i>临<i>/</i>食<i>/</i>感</div>   -->
+
+        <p class="fresh_mod_head_subtitle">INSPIRATION FRESH</p>
+      </div>
+    </div>
+    <div class="goods_arr2_tab">
+      <!-- {foreach from=$sort_goods_arr2 item=sort key=sort_name name=goods_arr2} -->
+      <div class="tab_item"> <span> {$sort_name}</span> </div>
+      <!--{/foreach}-->
+      <div class="clear0"></div>
+    </div>
+    <div class="sort_goods_body" >
+      <div class="gad"> {insert name='ads' id=254 num=4} </div>
+      <!-- {foreach from=$sort_goods_arr2 item=sort key=sort_name name=goods_arr2} -->
+      <div class="Tr_cs sort2_name_f sort_good_from"  
+    
+      <!-- {if $smarty.foreach.goods_arr2.iteration>1} -->
+      style="display:none"
+      <!--{/if}-->
+      >
+      <div class="up_down">
+        <div class="pp"><a class="up" href="javascript:;"></a><a class="down" href="javascript:;"></a></div>
+      </div>
+      <div class="cxjad_m">
+        <div class="cxjinfo">
+          <!-- {foreach from=$sort item=goods name=goodsname} -->
+          <div class="cxjitem sort_good_item"  >
+            <div class="sort_good_item_p">
+              <div class="p"><a href="{$goods.url}" class="pic"> <img class="goodsimg" width="220" height="220" src="{$goods.goods_thumb}"   ></a></div>
+              <div class="name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}">{$goods.goods_name|escape:html}
+                <!-- {if $goods.brief} -->
+                <span>{$goods.brief}</span>
+                <!--{/if}-->
+                </a></div>
+              <div class="goods_price">
+                <!-- {if $goods.is_promote} -->
+                <em>{$goods.promote_price}</em>
+                <!-- {else}-->
+                <em>{$goods.shop_price} </em>
+                <!--{/if}-->
+                <span>好评率98%</span> </div>
+ <!--   上一行可以修改该区域商品图片右下角显示的文字  现在代码是<span>好评率98%</span> </div>   -->
+
+
+            </div>
+          </div>
+          <!--{/foreach}-->
+        </div>
+      </div>
+    </div>
+    <!--{/foreach}-->
+    <div class="clear0"></div>
+  </div>
+  <div class="clear0"></div>
+</div>
+</div>
+<script> 
+$(function (){
+$('.gad a').each(function(i){
+   var alt=$(this).attr("alt");
+   var mes=$(".tab_item").eq(i).html();
+  $(this).prepend("<p>"+alt+"</p>");
+  $(this).prepend(mes);
+  
+  
+});
+   $(".tab_item").eq(0).addClass("active");
+
+ $(".gad a").eq(0).show();
+ $(".tab_item").click(function(){
+  $(".tab_item").removeClass("active");
+  $(this).addClass("active");
+  
+  $(".sort2_name_f").hide();
+  $(".gad a").hide();
+  $(".gad a").eq($(this).index()).show();
+  $(".sort2_name_f").eq($(this).index()).show();
+ })
+  
+
+
+})
+</script>

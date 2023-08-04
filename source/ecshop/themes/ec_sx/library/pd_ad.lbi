@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $category==60} -->
+{insert name='ads' id=230 num=8}
+<!-- {elseif $category==25} -->
+{insert name='ads' id=230 num=8}
+<!-- {elseif $category==18} -->
+{insert name='ads' id=230 num=8}
+<!-- {elseif $category==22} -->
+{insert name='ads' id=230 num=8}
+<!-- {elseif $category==1} -->
+{insert name='ads' id=230 num=8}
+<!-- {elseif $category==6} -->
+{insert name='ads' id=230 num=8}
+<!-- {elseif $category==12} -->
+{insert name='ads' id=230 num=8}
+<!-- {elseif $category==16} -->
+{insert name='ads' id=230 num=8}
+<!-- {else } -->{insert name='ads' id=230 num=8}
+<!--{/if}-->
+
+
+<script>
+$(function (){
+ 
+  $(".Tr_cs0").textSlider({
+            speeds: 5000,
+            lines: 1,
+            offset: 500000,
+            direc: 3,
+            qnum: 1
+        });
+ 
+ 
+
+});
+</script>

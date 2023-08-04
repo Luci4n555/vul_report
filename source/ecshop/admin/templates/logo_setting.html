@@ -1,0 +1,19 @@
+
+{include file="pageheader.htm"}
+
+<div style="width:100%;border:solid 1px #dddddd;padding: 25px;">
+    <div style="margin: 0 auto;width: 350px;">
+        <form action="mobile_setting.php?act=up_logo_setting" method="post" enctype="multipart/form-data">
+            <p>{$lang.logo_image_home}</p>
+            <input type="file" name="logo_image"><br>
+            {if $app_logo}
+            <img src="{$app_logo}" alt="" width="" height="50px">
+            {/if}
+            <p>{$lang.picture_url}L</p>
+            <p><input type="text" name="image_url" value="" placeholder="({$lang.logo_image_desc})"></p>
+            <button type="submit"> {$lang.submit}</button>
+        </form>
+    </div>
+</div>
+
+{include file="pagefooter.htm"}

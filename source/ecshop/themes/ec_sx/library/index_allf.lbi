@@ -1,0 +1,57 @@
+ <!-- 当前页面可以修改首页右侧快捷导航的说明文字 -->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<DIV id="gotop" style="display:none">
+  <UL class=allf>
+    <LI class=f0><A title="生鲜秒杀" href="javascript:;" type=0>生鲜秒杀</A></LI>
+    <LI class=f1><A title="特色购" href="javascript:;" type=1>特色购</A></LI>
+    <LI class=f2><A title="身临食感" href="javascript:;" type=2>身临食感</A></LI>
+    <LI class=f3><A title="生鲜优选" href="javascript:;" type=3>生鲜优选</A></LI>
+    <LI class=f4><A title="食鲜者说" href="javascript:;" type=4>食鲜者说</A></LI>
+    
+    <LI class=f5><A title="{$lang.sx_on_service}" href="http://wpa.qq.com/msgrd?v=3&amp;uin=125439898&amp;site=qq&amp;menu=yes" type=5><i class="ioc"></i></A></LI>
+    <LI class=f6><A title="{$lang.top_cart_info}" href="flow.php?step=checkout" type=6><i class="ioc"></i></A></LI>
+    <LI class=f7><A title="{$lang.back_to_top}" class="htop" href="javascript:;"  type=7><i class="ioc"></i></A></LI>
+  </UL>
+</DIV>
+
+<script>$(function (){ 
+var fright = $(window).width() - 1190;
+$("#gotop").css({"right":fright/2-70}); 
+var f0_top = $(".tabs_0").offset().top-100;
+
+$('.tabs').each(function(i) {
+								
+  $(window).scroll(function() {  
+     var s_top=$(window).scrollTop();	
+	  
+   if(s_top>f0_top){ 
+        $("#gotop").show()
+         } 
+		 else{$("#gotop").hide()
+		};
+			 
+	 var fi_top=$(".tabs_"+i).offset().top-60;			
+     if(s_top>fi_top){
+  	     var gg=i+1;
+	     $(".allf>li").removeClass("li_v");
+		 $('.allf>li.f'+i).addClass('li_v');	
+        };
+ 
+ });
+
+});
+
+$(".allf a").click(function(){
+ 	  var type=$(this).attr("type");  
+   	  if(type==7){ 
+			  $('body,html').animate({scrollTop:0},1000); 
+			  }
+		 else
+		 {    var hf_top = $(".tabs_"+type).offset().top-50;
+			  $('body,html').animate({scrollTop:hf_top},1000);} 
+		
+  }) })
+
+</script>

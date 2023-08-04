@@ -1,0 +1,87 @@
+<!--[if !IE]><!-->
+  <script src="{$template_dir}/js/scrollReveal.min.js"></script>
+<script>$(function (){
+window.sr = new scrollReveal({
+	// reset: true,
+	move: '100px',
+	mobile: true
+});})
+</script>
+<!--<![endif]-->
+
+<div class="fd_top2">
+  <div class="fd_top">
+    <div class="navs_l hover">
+      <div class="fd30_cat">
+        <div class="t">{$lang.all_category}</div>
+        <div class="classmenu">
+          <ul>
+            <!--{foreach from=$categories item=cat name=catename }-->
+                 <!--{if $smarty.foreach.catename.index <5}-->
+            <li class="cat_lv1 hover  post_cat{$cat.id} li{$smarty.foreach.catename.iteration}">
+              <div class="ct">
+              <i class="item_icon"></i>
+              <a href="
+              <!--{if $cat.style}-->
+              categorys.php?id={$cat.id}<!-- {else} -->{$cat.url}<!-- {/if} -->             
+              "  class="ao">{$cat.name|escape:html}</a>          
+              <span class="get_next">
+              
+                                <!--{foreach from=$cat.cat_id item=child name=childname}-->
+                                
+                                              <!--{if $smarty.foreach.childname.index <2}-->
+                                <a class="at {$child.fdcolor}"  href="{$child.url}">{$child.name|escape:html}</a>
+                                  <!--{/if}-->
+                                          <!--{/foreach}-->
+              
+              </span></div>
+               
+              <!--{if $cat.cat_id}-->
+              <div class="cat_p">
+                <div class="cat_cat">
+                 
+                  <!--{foreach from=$cat.cat_id item=child name=childname}-->
+                  <dl id="post_{$child.id}" >
+                  <dt><a class="at {$child.fdcolor}"  href="{$child.url}">{$child.name|escape:html}</a></dt>
+                  <!--{if $child.cat_id}-->
+                  <dd>
+                    <!--{foreach from=$child.cat_id item=childer}-->
+                    <a href="{$childer.url}" class="{$childer.fdcolor}">{$childer.name|escape:html}</a>
+                    <!--{/foreach}-->
+                    <!--{/if}-->
+                  </dd>
+                  <div class="clear0"></div>
+                  </dl>
+                  <!--{/foreach}-->
+                </div>
+                
+                
+               
+              </div>
+              <!--{/if}-->
+            </li>    <!--{/if}-->
+            <!--{/foreach}-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navs_m">
+      <ul class="Menulist">
+        <li class="li_home"><a href="index.php" >{$lang.home}</a></li>
+        <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+        <li class="li{$smarty.foreach.nav_middle_list.iteration}"><a href="{$nav.url}" 
+   
+          <!-- {if $nav.opennew eq 1} -->
+          target="_blank"
+          <!-- {/if} -->
+          >{$nav.name}</a></li>
+        <!-- {/foreach} -->
+      </ul>
+    </div>
+    <div class="fr"><a href="../index.php" name="top"><img src="{$template_dir}/images/jdhp.jpg" class="logo" /></a></div>
+    <div class="clear0"></div>
+  </div>
+</div>
+
+
+

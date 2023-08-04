@@ -1,0 +1,52 @@
+{if $topic.css neq ''}
+<style type="text/css">
+{
+$topic.css
+}
+</style>
+{/if}
+ 
+{* 包含脚本文件 *}
+{* TitlePicWidth: 2 *}
+{* TitlePicHeight: 38 *}
+
+{* 说明：$title_pic，分类标题图片地址； *}
+{* 说明：$base_style，基本风格样式颜色； *}
+ 
+  <!-- {foreach from=$sort_goods_arr item=sort key=sort_name name=goods_arr} -->
+  <div class="all_tt"><span>{$sort_name}</span>
+ 
+    <div class="clear0"></div>
+  </div>
+ 
+
+      <div class="i_gg">
+        <!-- {foreach from=$sort item=goods name=goodsname} -->
+        <div class="prcitem prcitem{$smarty.foreach.goodsname.iteration}"  data-sr="move 1rem, over 1s, enter top">
+          <div class="prcitem_border">
+             
+            <div class="p"><a href="{$goods.url}"> <img class="goodsimg" width="220" height="220" src="{$goods.goods_thumb}"></a></div>
+            <div class="i">
+              <div class="name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}">{$goods.goods_name|escape:html}
+                <!-- {if $goods.brief} -->
+                <span>{$goods.brief}</span>
+                <!--{/if}-->
+                </a></div>
+              <div class="prices">
+                <!-- {if $goods.is_promote} -->
+                <em class="word_c">{$goods.promote_price}</em>
+                <!-- {else}-->
+                <em class="word_c">{$goods.shop_price} </em>
+                <!--{/if}-->
+              </div>
+            </div><div class="clear0"></div>
+          </div>
+        </div>
+        <!--{/foreach}-->
+        <div class="clear0"></div>
+      </div>
+
+
+ 
+  <!--{/foreach}-->
+ 

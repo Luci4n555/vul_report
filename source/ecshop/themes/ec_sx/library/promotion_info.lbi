@@ -1,0 +1,23 @@
+<!-- 设置首页轮播图右边上面促销信息的大标题 -->
+ 
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_info} -->
+<!-- 促销信息 -->
+
+<div class="fresh_fs_toutiao">
+  <div class="fresh_fs_toutiao_title"><i class="fresh_fs_toutiao_title_l"></i><span class="fresh_fs_toutiao_title_text"><em>生鲜</em>头条</span><i class="fresh_fs_toutiao_title_r"></i></div>
+  <div class="fresh_fs_toutiao_list">
+
+
+    <!-- {foreach from=$promotion_info item=item key=key name=promotion_info} --> 
+                <!--{if $smarty.foreach.promotion_info.index <3}-->
+                                
+                           
+    <a   class="fresh_fs_toutiao_item"  href="{$item.url}" title="{$lang.$item.type} {$item.act_name}{$item.time}">{$item.act_name}</a> 
+          <!--{/if}--> <!-- {/foreach} -->
+
+    
+  </div>
+</div><!-- {/if} -->

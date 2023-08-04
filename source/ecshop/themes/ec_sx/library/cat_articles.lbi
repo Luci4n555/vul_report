@@ -1,0 +1,17 @@
+ <!-- 当前页面可修改“精品资讯”区域下方的字、下方的图标以及查看详情的具体字符 -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="art_box">
+  <div class="t">{$articles_cat.name}</div>
+  <p  class="fresh_dong_head_subtitle"><i class="fresh_dong_head_subtitle_l"></i> <span class="fresh_dong_head_subtitle_text">妙手烹佳肴 东家有鲜食</span><i class="fresh_dong_head_subtitle_r"></i> </p>
+  <a class="fresh_unique_btn" href="{$articles_cat.url}" target="_blank" >{$lang.more_goods}<i>&gt;</i></a>
+  <div class="info">
+    <!--{foreach from=$articles item=article_item}-->
+    <div class="art_item"> <a href="{$article_item.url}"  title="{$article_item.title|escape:html}">
+      <p><img src="{$article_item.article_pic}"></p>
+      <stong>{$article_item.short_title}</stong>
+      <span>{$article_item.description}</span> <i>{$lang.goods_details} &gt;</i> </a> </div>
+    <!--{/foreach}-->
+    <div class="clear0"></div>
+  </div>
+</div>

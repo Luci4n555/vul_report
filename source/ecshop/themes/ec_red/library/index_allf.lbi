@@ -1,0 +1,13 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<DIV id=gotop style="display:none">
+  <UL class=allf>
+    <LI class=f0><A title=彩妆系列 href="#f0" type=url><SPAN>彩妆系列</SPAN></A></LI>
+    <LI class=f1><A title=面部护理 href="#f1" type=url><SPAN>面部护理</SPAN></A></LI>
+    <LI class=f2><A title=修改位置 href="#f2" type=url><SPAN>修改位置</SPAN></A></LI>
+    <LI class=f3><A title=模板管理 href="#f3" type=url><SPAN>模板管理</SPAN></A></LI>
+    <LI class=f4><A title=库项目管 href="#f4" type=url><SPAN>库项目</SPAN></A></LI>
+    <LI class=f5><A title=第六楼 href="#f5" type=url><SPAN>第六楼</SPAN></A></LI>
+    <LI class=top><A title={$lang.back_to_top} class=htop href="#top"><SPAN>{$lang.back_to_top}</SPAN></A></LI>
+  </UL>
+</DIV>
+

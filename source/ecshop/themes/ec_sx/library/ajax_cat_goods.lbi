@@ -1,0 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<!--{foreach from=$index_new_goods item=goods}-->
+
+   <div class="h5_item">
+   <div class="h5_item_p"> 
+        <a target="_blank" href="/demo14/h5/#/product?id={$goods.id}" class="pic">
+            <img src="{$goods.thumb}" width="220" height="220" alt="{$goods.name|escape:html}" class="goodsimg" />
+        </a>
+
+   <div class="goods_info">
+      <div class="goods_name">
+           <a target="_blank"  href="/demo14/h5/#/product?id={$goods.id}"> {$goods.name|truncate:30:""} 
+           </a>
+      </div>
+   <div class="goods_price"><span class="word_c">
+        <!-- {if $goods.promote_price} -->
+        {$goods.promote_price}
+        <!-- {else}-->
+        {$goods.shop_price}
+        <!--{/if}-->
+        </span>
+          <del>{$goods.market_price}</del> <a  href="/demo14/h5/#/product?id={$goods.id}" class="goods_item_btn"></a>
+         </div>
+    </div>
+  </div>
+</div>
+<!--{/foreach}-->

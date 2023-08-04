@@ -1,0 +1,46 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<div class="t"> <i class="ib"></i><i class="ib1"></i><span class="bt">排行榜</span>
+ <a href="../search.php?intro=hot" target="_blank" title="" class="more">专属你的购物指南<i class="btn_ico"></i></a>
+  </div>
+
+  <div class="hover" id="goods_hot">
+  
+  
+     <div class="qht" id="itemhot"> {if $cat_rec[3]}
+      <h2><a href="javascript:void(0)"  class="afirst" onmouseover="change_tab_style('itemhot', 'h2', this);get_cat_recommend(3, 0);">{$lang.all_goods}<span class="divss"></span></a></h2>
+      {foreach from=$cat_rec[3] item=rec_data}
+      <h2 class="h2bg"><a href="javascript:void(0)" onmouseover="change_tab_style('itemhot', 'h2', this);get_cat_recommend(3, {$rec_data.cat_id})">{$rec_data.cat_name}<span class="divss"></span></a></h2>
+      {/foreach}
+      {/if} </div>
+        
+        
+    <div class="cxjinfo" id="show_hot_area">
+      <!-- {/if} -->
+      <!--{foreach name=hot_goods  from=$hot_goods item=goods name=hot_goods}-->
+            <!-- {if $smarty.foreach.hot_goods.index<6} -->
+      <div class="prcitem"  >
+        <div class="prcitem_border">
+          <div class="p"><i class="img_ico img_ico_{$smarty.foreach.hot_goods.iteration}">{$smarty.foreach.hot_goods.iteration}</i>
+          <a href="{$goods.url}" class="pic"><img src="{$goods.thumb}"  alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+          <div class="i">
+            <div class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html} </a></div>
+     
+     
+             
+          </div>
+        </div>
+      </div><!-- {/if} -->
+      <!--{/foreach}-->
+    </div>
+    <!-- {if $cat_rec_sign neq 1} -->
+  </div>
+  <div class="clear0"></div>
+
+
+<!-- {/if} -->
+<!-- {/if} -->
+
+
+

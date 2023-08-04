@@ -1,0 +1,110 @@
+ <!-- 当前页面可以修改顶部导航栏右侧二维码的说明文字，比如“移动端 -->
+
+{insert_scripts files='transport2.js,utils.js'}
+<link href="{$template_dir}/images/fd30_13.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<script language='javascript' src='{$template_dir}/js/fdjs.js' type='text/javascript' charset='utf-8'></script>
+<script language='javascript' src='{$template_dir}/js/fdjs.json.js' type='text/javascript' charset='utf-8'></script>
+<script language='javascript' src='{$template_dir}/js/cxjc.js' type='text/javascript' charset='utf-8'></script>
+</head><body>
+
+<a name="top"></a>
+<div class=fd_top0>
+  <div class=fd_top>
+    <div class="fr">
+      <ul>
+
+
+
+<!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+           <li> <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} --> class="snc-link snc-order">{$nav.name}</a>
+            
+            
+        </li>
+        
+            <!-- {/foreach} -->
+
+
+ 
+  
+  
+   
+   
+       
+       
+        <li class="li4"><a href="#">{$lang.scan_wechat}<I></I> </a>
+          <div class="mobile_static">
+            <div class="mobile_static_qrcode"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="fr"> <font id="ECS_MEMBERZONE">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font> </div>
+  </div>
+  <div class=clear0></div>
+</div>
+<div class="fd_top1">
+  <div class="fd_top">
+    <div class="logo1"><a href="../index.php" name="top"></a></div>
+    <div class="search">
+      <div class="search_label">
+        <form id="searchForm" name="searchForm" method="get" action="search.php"  class="SearchBar" onSubmit="return checkSearchForm()">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><select name="category" id="category" class="B_input" style="display:none">
+                  <option value="0">{$lang.all_category}</option>
+                  
+                  
+                    
+                    
+                    {$category_list}
+                  
+                  
+                  
+                
+                </select>
+                 <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" class="inputstyle keywords" placeholder="" autocomplete="off" /></td>
+              <td><input name="imageField" type="submit" value="{$lang.search}" title="{$lang.search}" class="btn_search" style="cursor:pointer;" /></td>
+              <td style="display:none"><a href="search.php?act=advanced_search">{$lang.advanced_search}</a></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="searchkeywords"> {foreach from=$searchkeywords item=val} <a href="search.php?keywords={$val|escape:url}">{$val}</a> {/foreach} </div>
+    </div>
+    <div class="fr"> <!-- #BeginLibraryItem "/library/cart.lbi" -->
+      <div class="cart" id="ECS_CARTINFO"> {insert name='cart_info'} </div>
+      <!-- #EndLibraryItem --> </div>
+    <div class="clear0"></div>
+  </div>
+  <div class="clear0"></div>
+</div>
+<div class="clear0"></div>
+<script>  $(function (){
+					
+					  
+					  $("#cartCount").html($("#goodsCount").html());
+					  });	
+function addFavorite(sURL, sTitle)
+{
+    try
+    {
+        window.external.addFavorite(sURL, sTitle);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        }
+        catch (e)
+        {
+            alert("对不起您的浏览器不支持操作，请使用Ctrl+D进行添加");
+        }
+    }
+};
+ 
+
+</script>

@@ -1,0 +1,37 @@
+<!--   index_top.lbi-   修改轮播图下方文字说明-->
+
+
+<div class="fresh_service grid_c1 web_body" id="fresh_service_2">
+  <ul class="mod_service grid_c1 clearfix">
+    <li class="mod_service_item item1">
+      <div class="mod_service_item_inner"><i class="mod_iconfont mod_service_icon icon-fresh_service_icon_1"></i>
+        <p class="mod_service_title">食品安全</p>
+        <p class="mod_service_desc">精选生鲜 严格质检</p>
+      </div>
+    </li>
+    <li class="mod_service_item item2">
+      <div class="mod_service_item_inner"><i class="mod_iconfont mod_service_icon icon-fresh_service_icon_2"></i>
+        <p class="mod_service_title">全程冷链</p>
+        <p class="mod_service_desc">自营物流 安全可控</p>
+      </div>
+    </li>
+    <li class="mod_service_item item3">
+      <div class="mod_service_item_inner"><i class="mod_iconfont mod_service_icon icon-fresh_service_icon_3"></i>
+        <p class="mod_service_title">鲜活天然</p>
+        <p class="mod_service_desc">绿色生态 京东精选</p>
+      </div>
+    </li>
+    <li class="mod_service_item item4">
+      <div class="mod_service_item_inner"><i class="mod_iconfont mod_service_icon icon-fresh_service_icon_4"></i>
+        <p class="mod_service_title">产地直采</p>
+        <p class="mod_service_desc">限定产源 质量保证</p>
+      </div>
+    </li>
+    <li class="mod_service_item item5">
+      <div class="mod_service_item_inner"><i class="mod_iconfont mod_service_icon icon-fresh_service_icon_5"></i>
+        <p class="mod_service_title">无忧售后</p>
+        <p class="mod_service_desc">优鲜赔 售后通道</p>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,37 @@
+ <!-- 当前页面可以修改首页顶部，用户登录后，用户名称后面的文字；登录、注册的文字内容 -->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $user_info}
+<span class="fd_user">
+   <a href="user.php" class="faces faces_img"><img src="{if $user_info.extend_field100} 
+  {$user_info.extend_field100}
+  
+ {else}
+  {$template_dir}/images/face/0.png{/if}">  </a> 
+  
+<span class="u_f">
+ {$lang.hello}，<b class="word_c">{$user_info.username}</b>，{$lang.welcome_return}
+  <span class="cl"></span> 
+  <a href="user.php">{$lang.user_center}</a>  <a href="user.php?act=logout">{$lang.user_logout}</a> 
+ 
+ </span>
+  <span class="cl"></span>
+
+
+</span>
+ {else}
+ <span class="fd_user"><a href="user.php" class="faces faces_img">
+<img src="{$template_dir}/images/face/0.png"></a>
+<span class="u_f">
+ {$lang.welcome}！ 
+ <span class="cl"></span>
+ 
+ <a href="user.php" class="sign">{$lang.user_login}</a>  <a href="user.php?act=register" class="reg">{$lang.reg_now}</a> 
+ </span>
+ <span class="cl"></span>
+
+
+ 
+ </span>
+ {/if}

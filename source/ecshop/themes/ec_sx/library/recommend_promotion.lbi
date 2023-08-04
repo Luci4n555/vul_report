@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language='javascript' src='{$template_dir}/js/fd30_time.js' type='text/javascript' charset='utf-8'></script>
+<!-- {if $promotion_goods} -->
+<div class="promotion_goods">
+  <div class="fl">  
+  
+  <div class="tt">当前场次剩余时间</div>
+  <!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
+      <!--{if $smarty.foreach.promotion_foreach.iteration==1}-->
+  <div class="fd30_time" dayh="1" endtime="{$goods.gmt_end_time}"></div><!-- {/if} -->
+      <!--{/foreach}-->
+  
+  
+  </div>
+  <div class="fr">
+    <!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
+     <!--{if $smarty.foreach.promotion_foreach.iteration<6}-->
+    <div class="prcitem cxjitem cxjitem_{$smarty.foreach.hot_goodsss.index}"   data-sr="move 1rem, over 2s, enter top" >
+      <div class="prcitem_border">
+        <div class="p"><a href="{$goods.url}" class="pic"><img src="{$goods.thumb}"  alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+        <div class="i">
+          <div class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html} </a></div>
+          <div class="brief">{$goods.brief}</div>
+          <div class="prices"> <em class="word_c">{$goods.promote_price}</em> <del> {$goods.market_price}</del> </div>
+        
+        </div>
+      </div>
+    </div><!-- {/if} -->
+    <!--{/foreach}-->
+  </div>
+  <div class="clear0"></div>
+</div>
+<!-- {/if} -->
