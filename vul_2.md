@@ -8,7 +8,7 @@ Website: http://www.ecshop.com
 
 Download Link: http://update.shopex.com.cn/version/program/ECShop/download_ecshop_utf8.php
 
-P.S. : You may need to register to download the source code. The source folder of this project is the source code of the latest version 4.1.16 on the official website of ecshop.
+P.S. : You may need to register to download the source code(Here is an account for easy use, the account name is 17200750002, and the password is abc123456). The source folder of this project is the source code of the latest version 4.1.16 on the official website of ecshop.
 
 ## Website Development 
 Website Environment: Apache 2.4.x + MySQL 5.7.x + PHP 5.6.x
